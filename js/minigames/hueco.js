@@ -6,7 +6,7 @@ export function renderHuecoGame(card, step) {
   const diff = DIFFICULTY[step.tier];
   const g = { round: 0, hits: 0, gapIndex: -1, timer: null };
   const meta = document.createElement('div'); meta.className = 'mem-meta';
-  meta.innerHTML = `<span>Encontrá el hueco entre los rivales antes de que se cierre</span><span id="huecoProg">Ronda 1/${diff.huecoRounds} · Aciertos ${g.hits}/${diff.huecoNeeded}</span>`;
+  meta.innerHTML = `<span>Encuentra el hueco entre los rivales antes de que se cierre</span><span id="huecoProg">Ronda 1/${diff.huecoRounds} · Aciertos ${g.hits}/${diff.huecoNeeded}</span>`;
   card.appendChild(meta);
   const grid = document.createElement('div'); grid.className = 'mem-grid';
   card.appendChild(grid);

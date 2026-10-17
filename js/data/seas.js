@@ -1,6 +1,6 @@
 /**
  * Mares de origen.
- * Para añadir un mar nuevo: copiá un bloque, cambiá id/name/desc/mod y sus
+ * Para añadir un mar nuevo: copia un bloque, cambia id/name/desc/mod y sus
  * islands. `mod` se suma a las stats del personaje al elegir el mar;
  * cada isla dentro de `islands` suma un `mod` propio además del mar.
  */
@@ -51,17 +51,17 @@ export const SEAS = [
   },
   {
     id: 'grandline', name: 'Grand Line / Nuevo Mundo',
-    desc: 'Naciste ya dentro de la tormenta. Todo cuesta más caro, pero arrancás sabiendo leer el mar.',
+    desc: 'Naciste ya dentro de la tormenta. Todo cuesta más caro, pero arrancas sabiendo leer el mar.',
     mod: { navegacion: 2 },
     islands: [
       { name: 'Archipiélago del Clima Loco', desc: 'Cuatro estaciones distintas en el mismo día, y ya estás acostumbrado.', mod: { navegacion: 1 } },
-      { name: 'Isla del Log Roto', desc: 'Nadie confía en las brújulas comunes acá, y con razón.', mod: { inteligencia: 1 } },
+      { name: 'Isla del Log Roto', desc: 'Nadie confía en las brújulas comunes aquí, y con razón.', mod: { inteligencia: 1 } },
       { name: 'Puerto de las Corrientes Cruzadas', desc: 'Solo los que crecieron viendo morir barcos ajenos aprenden a no ser el próximo.', mod: { resistencia: 1 } }
     ]
   },
   {
     id: 'tenryuubito', name: 'Tenryuubito',
-    desc: 'Naciste en la cima del mundo, en Mary Geoise. Nadie se atreve a tocarte... pero tampoco a confiar en vos.',
+    desc: 'Naciste en la cima del mundo, en Mary Geoise. Nadie se atreve a tocarte... pero tampoco a confiar en ti.',
     mod: { carisma: 2, haki: -1 },
     islands: [
       { name: 'Sector Alto de Mary Geoise', desc: 'Nunca tocaste el suelo común hasta el día que decidiste bajar.', mod: { carisma: 1 } },

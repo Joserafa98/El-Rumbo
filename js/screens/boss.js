@@ -24,10 +24,10 @@ export function renderBoss(stage, step) {
   stage.appendChild(wrap);
 }
 
-/** Modo Instinto Feroz: elegís un ritual, se decide por dado + stat. */
+/** Modo Instinto Feroz: eliges un ritual, se decide por dado + stat. */
 function renderBossInstinto(card, enemy, step) {
   const rituals = [
-    { title: 'Tocar tu amuleto de la suerte', desc: 'El que llevás desde tu primer día en el mar.' },
+    { title: 'Tocar tu amuleto de la suerte', desc: 'El que llevas desde tu primer día en el mar.' },
     { title: 'Rezarle al mar', desc: 'Aunque no creas del todo, no cuesta nada.' },
     { title: 'Confiar ciegamente en tu instinto', desc: 'A veces pensar de más solo te frena.' }
   ];

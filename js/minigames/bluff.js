@@ -6,7 +6,7 @@ export function renderBluffGame(card, step) {
   const diff = DIFFICULTY[step.tier];
   const g = { round: 0, hits: 0, rounds: 3 };
   const meta = document.createElement('div'); meta.className = 'mem-meta';
-  meta.innerHTML = `<span>Adiviná por dónde viene el primer golpe</span><span id="bluffProg">Ronda 1/${g.rounds} · Aciertos ${g.hits}/${diff.bluffNeeded}</span>`;
+  meta.innerHTML = `<span>Adivina por dónde viene el primer golpe</span><span id="bluffProg">Ronda 1/${g.rounds} · Aciertos ${g.hits}/${diff.bluffNeeded}</span>`;
   card.appendChild(meta);
   const row = document.createElement('div'); row.className = 'grid2';
   card.appendChild(row);

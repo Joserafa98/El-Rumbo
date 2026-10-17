@@ -8,9 +8,9 @@ import { renderBoss } from './boss.js';
 
 /**
  * Dispatcher de la pantalla `play`: cada paso del recorrido (state.steps)
- * tiene un `type`, y acá se decide qué función de render usar para cada uno.
- * Sumar un tipo de paso nuevo: escribí su `renderX` acá (o en su propio
- * módulo) y agregalo a este objeto `dispatch`.
+ * tiene un `type`, y aquí se decide qué función de render usar para cada uno.
+ * Sumar un tipo de paso nuevo: escribe su `renderX` aquí (o en su propio
+ * módulo) y agrégalo a este objeto `dispatch`.
  */
 SCREENS.play = (stage) => {
   const step = currentStep();
@@ -83,7 +83,7 @@ function renderNav(stage, step) {
     { title: 'Atravesar directo la tormenta', desc: 'Terreno de valientes. Exige resistencia de sobra.', risk: 'resistencia' }
   ];
   wrapCard(stage, `${state.name.toUpperCase()} · NAVEGACIÓN`, (card) => {
-    card.innerHTML += `<div class="scene-text">El cielo cambia de color de golpe. Tenés que elegir una ruta antes de que la corriente decida por vos.</div>`;
+    card.innerHTML += `<div class="scene-text">El cielo cambia de color de golpe. Tienes que elegir una ruta antes de que la corriente decida por ti.</div>`;
     const opts = document.createElement('div'); opts.className = 'options';
     routes.forEach(rt => {
       const el = document.createElement('div'); el.className = 'opt';
@@ -107,7 +107,7 @@ function renderNavResult(stage, route, tier) {
   wrapCard(stage, `${state.name.toUpperCase()} · NAVEGACIÓN`, (card) => {
     card.innerHTML += `<div class="center" style="font-size:26px;margin-bottom:12px;">🎲</div>
       <div class="result-banner ${success ? 'good' : 'bad'}">${success ? 'La ruta sale bien' : 'La ruta sale mal'}</div>
-      <div class="scene-text">${success ? 'Llegan enteros y con tiempo de sobra. La tripulación gana confianza en vos.' : 'La corriente los golpea de lleno. Se pierde tiempo, algo del barco se daña, pero salen adelante.'}</div>`;
+      <div class="scene-text">${success ? 'Llegan enteros y con tiempo de sobra. La tripulación gana confianza en ti.' : 'La corriente los golpea de lleno. Se pierde tiempo, algo del barco se daña, pero salen adelante.'}</div>`;
     const btn = document.createElement('button'); btn.className = 'primary-btn'; btn.textContent = 'Seguir viaje';
     btn.onclick = () => { addMod(success ? { navegacion: 1 } : { resistencia: 1 }); advanceStep(); };
     card.appendChild(btn);
@@ -118,8 +118,8 @@ function renderShop(stage, step) {
   const mult = step.tier === 1 ? 1 : 1.7;
   const bought = new Set();
   wrapCard(stage, `${state.name.toUpperCase()} · MERCADO`, (card) => {
-    card.innerHTML += `<div class="berries-top">Tenés ${fmt(state.berries)} para gastar</div>
-      <div class="scene-text">Antes de seguir viaje, aprovechás el puerto para reforzar todo lo que puedas pagar.</div>`;
+    card.innerHTML += `<div class="berries-top">Tienes ${fmt(state.berries)} para gastar</div>
+      <div class="scene-text">Antes de seguir viaje, aprovechas el puerto para reforzar todo lo que puedas pagar.</div>`;
     const list = document.createElement('div');
     SHOP_ITEMS.forEach(item => {
       const cost = Math.round(item.cost * mult);

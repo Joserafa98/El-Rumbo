@@ -35,5 +35,5 @@ export function statTotal() {
 
 /** Formatea un número de berries/recompensa al estilo "฿ 1.234.567". */
 export function fmt(n) {
-  return '฿ ' + Math.round(n).toLocaleString('es-AR');
+  return '฿ ' + Math.round(n).toLocaleString('es-419');
 }

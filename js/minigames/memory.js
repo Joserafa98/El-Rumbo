@@ -9,7 +9,7 @@ export function renderMemoryGame(card, step) {
   const g = { deck, open: [], matched: new Set(), misses: 0, locked: false };
 
   const meta = document.createElement('div'); meta.className = 'mem-meta';
-  meta.innerHTML = `<span>Memorizá los ataques del enemigo</span><span id="memMisses">Errores: 0 / ${diff.memMisses}</span>`;
+  meta.innerHTML = `<span>Memoriza los ataques del enemigo</span><span id="memMisses">Errores: 0 / ${diff.memMisses}</span>`;
   card.appendChild(meta);
   const grid = document.createElement('div'); grid.className = 'mem-grid';
   card.appendChild(grid);

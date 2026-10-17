@@ -9,7 +9,7 @@ export function renderTimingGame(card, step) {
   g.zoneStart = Math.max(4, Math.min(96 - diff.timingZone, g.zoneStart));
 
   const meta = document.createElement('div'); meta.className = 'timing-meta';
-  meta.innerHTML = `<span>Golpeá justo cuando pase por la zona verde</span><span id="timAttempts">Intentos: ${g.tries} · Aciertos: ${g.hits}/${diff.timingHits}</span>`;
+  meta.innerHTML = `<span>Golpea justo cuando pase por la zona verde</span><span id="timAttempts">Intentos: ${g.tries} · Aciertos: ${g.hits}/${diff.timingHits}</span>`;
   card.appendChild(meta);
   const track = document.createElement('div'); track.className = 'timing-track';
   const zone = document.createElement('div'); zone.className = 'timing-zone';

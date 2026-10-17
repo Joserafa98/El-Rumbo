@@ -1,18 +1,23 @@
-# El Rumbo — ¿llegás a Laugh Tale?
+# El Rumbo — ¿llegas a Laugh Tale?
 
 Un juego de rol corto, hecho por diversión, inspirado en el estilo de
 ["El Ídolo"](https://www.potrerofutbol.ar/el-idolo) pero ambientado en un
-universo propio de piratas al estilo One Piece. Elegís tu mar de origen,
+universo propio de piratas al estilo One Piece. Eliges tu mar de origen,
 tu isla, tu raza, tu estilo de combate y tu fruta del diablo (o la
-rechazás y vas solo de Haki), y cruzás tres tramos del mundo —tu mar
+rechazas y vas solo de Haki), y cruzas tres tramos del mundo —tu mar
 natal, el Grand Line y el Nuevo Mundo— sumando tripulación, recompensa y
 berries hasta llegar (o no) a Laugh Tale.
+
+Puedes jugarlo ya, sin instalar nada, en **https://el-rumbo.vercel.app/**.
 
 Es un proyecto sin fines de lucro y sin copyright (ver `LICENSE`): todos
 los mares, islas, frutas, razas y enemigos son invención original, para
 no pisar derechos de autor de la obra real.
 
 ## Probarlo en local
+
+Si quieres correrlo en tu propia máquina (por ejemplo para modificarlo),
+duplica este repositorio (fork o clónalo) y luego sírvelo localmente.
 
 Es un proyecto 100% estático (HTML + CSS + JS con ES Modules), sin build
 step. Pero los módulos ES **no funcionan abriendo el archivo directo**
@@ -27,12 +32,12 @@ python3 -m http.server 8000
 npx serve .
 ```
 
-Y después abrís `http://localhost:8000` (o el puerto que te haya dado) en
+Y después abre `http://localhost:8000` (o el puerto que te haya dado) en
 el navegador.
 
 ## Subirlo a GitHub Pages
 
-1. Creá un repo nuevo en GitHub y subí todo el contenido de esta carpeta
+1. Crea un repo nuevo en GitHub y sube todo el contenido de esta carpeta
    (`index.html`, `css/`, `js/`, etc.) a la rama `main`.
 2. En el repo, ir a **Settings → Pages**.
 3. En "Build and deployment", elegir **Deploy from a branch**, rama
@@ -89,40 +94,40 @@ Esto es exactamente para lo que está pensada esta estructura: cada tipo
 de contenido vive en su propio archivo chico, así que agregar algo nuevo
 casi nunca te obliga a tocar otro archivo.
 
-- **Un mar nuevo**: copiá un bloque dentro de `js/data/seas.js` y cambiale
+- **Un mar nuevo**: copia un bloque dentro de `js/data/seas.js` y cambia
   `id`, `name`, `desc`, `mod` y sus `islands`.
-- **Una isla nueva**: agregala al array `islands` del mar que corresponda,
+- **Una isla nueva**: agrégala al array `islands` del mar que corresponda,
   en `js/data/seas.js`.
-- **Una raza nueva**: sumá un objeto a `js/data/races.js`.
-- **Una fruta del diablo nueva**: sumá un objeto a `js/data/fruits.js`
-  (recordá inventar fruta, nombre y descripción originales, no copiar las
+- **Una raza nueva**: suma un objeto a `js/data/races.js`.
+- **Una fruta del diablo nueva**: suma un objeto a `js/data/fruits.js`
+  (recuerda inventar fruta, nombre y descripción originales, no copiar las
   del manga/anime real).
-- **Un rol de tripulación nuevo**: sumalo a `js/data/crew.js`.
-- **Un ítem de tienda nuevo**: sumalo a `js/data/shop.js`.
-- **Un enemigo nuevo**: agregalo al tier que corresponda en
+- **Un rol de tripulación nuevo**: súmalo a `js/data/crew.js`.
+- **Un ítem de tienda nuevo**: súmalo a `js/data/shop.js`.
+- **Un enemigo nuevo**: agrégalo al tier que corresponda en
   `js/data/enemies.js` (tier 1 = primer jefe del mar de origen, tier 4 =
   jefe final).
 - **Un capítulo narrativo nuevo, un combate más, una parada de tienda
-  extra**: agregá un objeto al array que devuelve `buildSteps()` en
+  extra**: agrega un objeto al array que devuelve `buildSteps()` en
   `js/data/journey.js`, en el punto del recorrido donde quieras que
   aparezca.
 - **Un arco completo nuevo** (un cuarto tramo del viaje, por ejemplo):
-  copiá un bloque de arco entero en `js/data/journey.js` y, si lo
-  necesitás, sumá un tier 5 de enemigos y de dificultad.
+  copia un bloque de arco entero en `js/data/journey.js` y, si lo
+  necesitas, suma un tier 5 de enemigos y de dificultad.
 - **Un minijuego nuevo** para los combates de "Técnica Pura":
-  1. Creá `js/minigames/tuJuego.js` exportando una función
-     `renderTuJuego(card, step)` (mirá cualquiera de los existentes como
+  1. Crea `js/minigames/tuJuego.js` exportando una función
+     `renderTuJuego(card, step)` (mira cualquiera de los existentes como
      plantilla — todos terminan llamando a `resolveBossOutcome` de
      `core/combat.js` cuando el jugador gana o pierde).
-  2. Importala en `js/minigames/index.js` y agregala al objeto
+  2. Impórtala en `js/minigames/index.js` y agrégala al objeto
      `TECNICA_GAMES` con una clave nueva.
   3. Si tu minijuego necesita números que varíen según la dificultad
-     (tier 1 a 4), sumale esos campos a cada tier en
+     (tier 1 a 4), súmale esos campos a cada tier en
      `js/data/difficulty.js`.
 - **Una pantalla nueva** (un tipo de evento distinto a narrativa/
-  crew/nav/boss/shop): escribí su función de render en `js/screens/` (o
-  en un archivo nuevo), registrala en el objeto `SCREENS` (importado de
-  `core/screens-registry.js`), e importá ese archivo desde `js/main.js`.
+  crew/nav/boss/shop): escribe su función de render en `js/screens/` (o
+  en un archivo nuevo), regístrala en el objeto `SCREENS` (importado de
+  `core/screens-registry.js`), e importa ese archivo desde `js/main.js`.
 - **Ajustar el balance** (qué tan difícil es cada jefe, cuántas rondas
   dura cada minijuego, cuánta recompensa da ganar): todo eso vive
   centralizado en `js/data/difficulty.js`, un solo archivo para los 4

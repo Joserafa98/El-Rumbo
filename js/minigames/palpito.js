@@ -6,7 +6,7 @@ export function renderPalpitoGame(card, step) {
   const diff = DIFFICULTY[step.tier];
   const g = { current: 1 + Math.floor(Math.random() * 12), streak: 0, tries: 3 };
   const wrap = document.createElement('div'); wrap.className = 'center';
-  wrap.innerHTML = `<div class="mem-meta"><span>Adiviná si la próxima carta del enemigo es mayor o menor</span><span id="palpitoProg">Racha ${g.streak}/${diff.palpitoNeeded} · Intentos ${g.tries}</span></div>
+  wrap.innerHTML = `<div class="mem-meta"><span>Adivina si la próxima carta del enemigo es mayor o menor</span><span id="palpitoProg">Racha ${g.streak}/${diff.palpitoNeeded} · Intentos ${g.tries}</span></div>
     <div class="card-draw" id="palpitoCard">${g.current}</div>`;
   card.appendChild(wrap);
   const row = document.createElement('div'); row.className = 'rps-row'; row.style.gridTemplateColumns = '1fr 1fr';

@@ -5,7 +5,7 @@ import { statTotal, fmt } from '../core/helpers.js';
 
 /**
  * Calcula el rango final según stats totales, recompensa y jefes ganados.
- * Para ajustar el balance de rangos, tocá los umbrales de `score` acá.
+ * Para ajustar el balance de rangos, toca los umbrales de `score` aquí.
  */
 function computeRank() {
   const total = statTotal();

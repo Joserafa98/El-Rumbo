@@ -7,7 +7,7 @@ export function renderChargeGame(card, step) {
   const g = { pos: 0, charging: false, tries: 3, hits: 0, zoneStart: 50 - diff.cargaZone / 2 };
   g.zoneStart = Math.max(4, Math.min(96 - diff.cargaZone, g.zoneStart));
   const meta = document.createElement('div'); meta.className = 'timing-meta';
-  meta.innerHTML = `<span>Mantené presionado para cargar el golpe y soltá en la zona dorada</span><span id="chargeAttempts">Intentos: ${g.tries} · Aciertos: ${g.hits}/${diff.cargaNeeded}</span>`;
+  meta.innerHTML = `<span>Mantén presionado para cargar el golpe y suelta en la zona dorada</span><span id="chargeAttempts">Intentos: ${g.tries} · Aciertos: ${g.hits}/${diff.cargaNeeded}</span>`;
   card.appendChild(meta);
   const track = document.createElement('div'); track.className = 'timing-track';
   const zone = document.createElement('div'); zone.className = 'timing-zone';

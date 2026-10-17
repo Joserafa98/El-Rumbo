@@ -7,7 +7,7 @@ export function renderClaveGame(card, step) {
   const seq = Array.from({ length: diff.claveLen }, () => Math.floor(Math.random() * 10));
   const g = { input: [] };
   const meta = document.createElement('div'); meta.className = 'mem-meta';
-  meta.innerHTML = `<span>Memorizá la clave del Den Den Mushi</span><span id="claveProg">0 / ${diff.claveLen}</span>`;
+  meta.innerHTML = `<span>Memoriza la clave del Den Den Mushi</span><span id="claveProg">0 / ${diff.claveLen}</span>`;
   card.appendChild(meta);
   const disp = document.createElement('div'); disp.className = 'seq-display';
   disp.textContent = seq.join('  ');

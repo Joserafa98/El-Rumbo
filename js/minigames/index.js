@@ -14,9 +14,9 @@ import { renderBluffGame } from './bluff.js';
  * clave al azar y llama a la función correspondiente con (card, step).
  *
  * Para sumar un minijuego nuevo:
- * 1. Creá js/minigames/tuJuego.js exportando renderTuJuego(card, step).
- * 2. Importalo acá y agregalo a este objeto con una clave nueva.
- * 3. Si usa números que varían por dificultad, sumale esos campos a
+ * 1. Crea js/minigames/tuJuego.js exportando renderTuJuego(card, step).
+ * 2. Impórtalo aquí y agrégalo a este objeto con una clave nueva.
+ * 3. Si usa números que varían por dificultad, súmale esos campos a
  *    cada tier en js/data/difficulty.js.
  */
 export const TECNICA_GAMES = {

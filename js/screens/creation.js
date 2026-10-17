@@ -13,8 +13,8 @@ import { buildSteps, pickEnemies } from '../data/journey.js';
  * estilo de combate → fruta. La última (fruitIntro) termina armando el
  * recorrido completo con buildGame() y entra a la pantalla `play`.
  *
- * Para sumar un paso nuevo al flujo de creación: creá la pantalla acá,
- * sumala a SCREENS, y cambiá el `state.screen = '...'` del paso anterior
+ * Para sumar un paso nuevo al flujo de creación: crea la pantalla aquí,
+ * súmala a SCREENS, y cambia el `state.screen = '...'` del paso anterior
  * para que apunte a la tuya.
  */
 
@@ -23,12 +23,12 @@ SCREENS.intro = (stage) => {
     <div class="brand">
       <div class="kicker">UN MAR, UNA BANDERA, UN RUMBO</div>
       <h1>EL RUMBO</h1>
-      <p>¿Llegás a tener tu estatua en Laugh Tale?</p>
+      <p>¿Llegas a tener tu estatua en Laugh Tale?</p>
     </div>
     <div class="card">
       <div class="scene-text">
-        Nacés en algún rincón de un mundo cubierto de mar. Elegís tu origen, tu poder y tu forma de pelear.
-        Cruzás tres tramos —tu mar de origen, el Grand Line y el Nuevo Mundo— sumando tripulación, recompensa
+        Naces en algún rincón de un mundo cubierto de mar. Eliges tu origen, tu poder y tu forma de pelear.
+        Cruzas tres tramos —tu mar de origen, el Grand Line y el Nuevo Mundo— sumando tripulación, recompensa
         y berries en el camino. Al final, o tu nombre queda escrito para siempre, o se pierde en el intento.
       </div>
       <button class="primary-btn" id="start">Zarpar</button>
@@ -40,7 +40,7 @@ SCREENS.intro = (stage) => {
 
 SCREENS.name = (stage) => {
   stage.innerHTML = `
-    <div class="brand"><div class="kicker">CREACIÓN</div><h1 style="font-size:26px;">¿Cómo te llamás?</h1></div>
+    <div class="brand"><div class="kicker">CREACIÓN</div><h1 style="font-size:26px;">¿Cómo te llamas?</h1></div>
     <div class="card">
       <div class="scene-text">El primer nombre que corre de boca en boca en un puerto es siempre el más difícil de olvidar.</div>
       <input type="text" id="nameInput" maxlength="24" placeholder="Nombre de tu capitán o capitana">
@@ -68,7 +68,7 @@ SCREENS.sea = (stage) => {
 
 SCREENS.island = (stage) => {
   stage.innerHTML = `
-    <div class="brand"><div class="kicker">CREACIÓN · ISLA NATAL</div><h1 style="font-size:26px;">¿De qué isla de ${state.sea.name} venís?</h1></div>
+    <div class="brand"><div class="kicker">CREACIÓN · ISLA NATAL</div><h1 style="font-size:26px;">¿De qué isla de ${state.sea.name} vienes?</h1></div>
     <div class="card"><div class="scene-text">Cada isla de este mar cría gente distinta.</div>
     <div class="options" id="opts"></div></div>`;
   const opts = stage.querySelector('#opts');
@@ -82,7 +82,7 @@ SCREENS.island = (stage) => {
 
 SCREENS.race = (stage) => {
   stage.innerHTML = `
-    <div class="brand"><div class="kicker">CREACIÓN · RAZA</div><h1 style="font-size:26px;">¿A qué raza pertenecés?</h1></div>
+    <div class="brand"><div class="kicker">CREACIÓN · RAZA</div><h1 style="font-size:26px;">¿A qué raza perteneces?</h1></div>
     <div class="card"><div class="scene-text">Naciste en ${state.island.name}, ${state.sea.name}. Pero tu cuerpo viene de mucho más atrás que eso.</div>
     <div class="options" id="opts"></div></div>`;
   const opts = stage.querySelector('#opts');
@@ -96,7 +96,7 @@ SCREENS.race = (stage) => {
 
 SCREENS.combatStyle = (stage) => {
   stage.innerHTML = `
-    <div class="brand"><div class="kicker">CREACIÓN · ESTILO DE COMBATE</div><h1 style="font-size:24px;">¿Qué clase de peleador sos?</h1></div>
+    <div class="brand"><div class="kicker">CREACIÓN · ESTILO DE COMBATE</div><h1 style="font-size:24px;">¿Qué clase de peleador eres?</h1></div>
     <div class="card">
       <div class="scene-text">Define cómo se resuelven TODOS los combates grandes de tu viaje. No se puede cambiar después.</div>
       <div class="grid2" id="opts"></div>
@@ -116,13 +116,13 @@ SCREENS.fruitIntro = (stage) => {
   stage.innerHTML = `
     <div class="brand"><div class="kicker">ARCO I · ${state.sea.name.toUpperCase()}</div><h1 style="font-size:24px;">Algo apareció en la orilla</h1></div>
     <div class="card">
-      <div class="scene-text">Un día, cerca de ${state.island.name}, encontrás algo que no tiene ningún sentido: una fruta rara, de aspecto imposible. Se dice que hay al menos tres tipos en el mundo. O podés decidir que no la vas a tocar.</div>
+      <div class="scene-text">Un día, cerca de ${state.island.name}, encuentras algo que no tiene ningún sentido: una fruta rara, de aspecto imposible. Se dice que hay al menos tres tipos en el mundo. O puedes decidir que no la vas a tocar.</div>
       <div class="options" id="opts"></div>
     </div>`;
   const opts = stage.querySelector('#opts');
   [...choices, NO_FRUIT].forEach(p => {
     const el = document.createElement('div'); el.className = 'opt';
-    el.innerHTML = `<span class="fruit-icon">${p.icon}</span><span class="opt-title">${p.name}${p.type ? ` <span style="font-weight:400;font-size:11px;color:var(--teal)">· ${p.type}</span>` : ''}</span><span class="opt-desc">${p.desc}</span><span class="opt-tags">${p.note || 'No podés volver a nadar en tu vida.'}</span>`;
+    el.innerHTML = `<span class="fruit-icon">${p.icon}</span><span class="opt-title">${p.name}${p.type ? ` <span style="font-weight:400;font-size:11px;color:var(--teal)">· ${p.type}</span>` : ''}</span><span class="opt-desc">${p.desc}</span><span class="opt-tags">${p.note || 'No puedes volver a nadar en tu vida.'}</span>`;
     el.onclick = () => { state.power = p; addMod(p.mod); buildGame(); };
     opts.appendChild(el);
   });

@@ -11,7 +11,7 @@ export function renderDadosGame(card, step) {
   }
   rollAll();
   const meta = document.createElement('div'); meta.className = 'mem-meta';
-  meta.innerHTML = `<span>Necesitás sumar ${diff.dadosThreshold} o más. Tocá un dado para guardarlo.</span><span>Tiradas restantes: ${g.rollsLeft}</span>`;
+  meta.innerHTML = `<span>Necesitas sumar ${diff.dadosThreshold} o más. Toca un dado para guardarlo.</span><span>Tiradas restantes: ${g.rollsLeft}</span>`;
   const rollsLeftEl = meta.lastElementChild;
   card.appendChild(meta);
   const diceRow = document.createElement('div'); diceRow.className = 'rps-row'; diceRow.style.gridTemplateColumns = 'repeat(5,1fr)';
@@ -30,7 +30,7 @@ export function renderDadosGame(card, step) {
       diceRow.appendChild(d);
     });
     const sum = g.dice.reduce((a, b) => a + b, 0);
-    sumLine.textContent = `Suma actual: ${sum} / necesitás ${diff.dadosThreshold}`;
+    sumLine.textContent = `Suma actual: ${sum} / necesitas ${diff.dadosThreshold}`;
     rollsLeftEl.textContent = `Tiradas restantes: ${g.rollsLeft}`;
     btn.textContent = g.rollsLeft > 0 ? `Volver a tirar (${g.rollsLeft} quedan)` : 'Cerrar jugada';
   }

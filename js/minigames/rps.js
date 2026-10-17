@@ -12,10 +12,10 @@ export function renderRpsGame(card, step) {
   ];
   const g = { you: 0, foe: 0 };
   const score = document.createElement('div'); score.className = 'rps-score';
-  score.innerHTML = `<span class="you">Vos <b id="rpsYou">0</b></span><span class="foe">Enemigo <b id="rpsFoe">0</b></span>`;
+  score.innerHTML = `<span class="you">Tú <b id="rpsYou">0</b></span><span class="foe">Enemigo <b id="rpsFoe">0</b></span>`;
   card.appendChild(score);
   const log = document.createElement('div'); log.className = 'rps-log'; log.id = 'rpsLog';
-  log.textContent = `Necesitás ${diff.rpsNeeded} rondas ganadas para vencer.`;
+  log.textContent = `Necesitas ${diff.rpsNeeded} rondas ganadas para vencer.`;
   card.appendChild(log);
   const row = document.createElement('div'); row.className = 'rps-row';
   card.appendChild(row);

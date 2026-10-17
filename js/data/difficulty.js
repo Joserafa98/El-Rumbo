@@ -1,8 +1,8 @@
 /**
  * Parámetros de dificultad por tier (1 = primer jefe del mar de origen,
- * 4 = jefe final antes de Laugh Tale). Cada minijuego lee de acá sus
+ * 4 = jefe final antes de Laugh Tale). Cada minijuego lee de aquí sus
  * propios números, así que sumar un minijuego nuevo normalmente implica
- * sumarle sus campos a cada tier acá.
+ * sumarle sus campos a cada tier aquí.
  */
 export const DIFFICULTY = {
   1: {
